@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+}
+
+.container {
+  width: 100%;
+  max-width: 590px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+h1 {
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 100px;
+  font-weight: 100;
+  margin: 10px 0 6px;
+}
+
+form {
+  box-shadow:
+    0 30px 50px -12px #d4d4d4,
+    0 3px 5px 0 #c0c0c0;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+
+
+.input {
+  width: 100%;
+  height: 65px;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: white;
+  position: relative;
+  width: 100%;
+  font-size: 24px;
+  color: inherit;
+  box-shadow: inset 0 -1.5px 2px 0 #f6f6f6;
+}
+
+#arrow {
+  cursor: pointer;
+  margin: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #E6E6E6;
+  font-size: 20px;
+}
+
+.arrow-dark {
+  color: #737373;
+}
+
+.input::placeholder {
+  font-style: italic;
+  color: #E6E6E6;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.mt-65 {
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.info {
+  color: #bfbfbf;
+  font-size: 10px;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
+  line-height: 2;
+}
+
+.addable {
+  position: relative;
+  border-top: 1px solid #E6E6E6;
+  display: flex;
+  background-color: white;
+}
+
+.addable:hover .delete {
+  display: block;
+}
+
+.secondary {
+  height: auto;
+  padding: 16px 45px 16px 20px;
+  border: none;
+  background: white;
+  position: relative;
+  width: 100%;
+  max-width: 509px;
+  font-size: 24px;
+  color: inherit;
+  transition: color 0.4s;
+  cursor: default;
+  text-align: start;
+  word-break: break-all;
+}
+
+.active {
+  color: inherit
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #D9D9D9;
+}
+
+.edit {
+  border: 1px solid #8f8f8f;
+  box-shadow: inset 0 -1px 5px 0 rgb(0 0 0 / 20%);
+  padding: 15px 44px 15px 19px;
+}
+
+.secondary:focus {
+  outline: none;
+}
+
+.checkbox-block {
+  width: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.checkbox-style {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+}
+
+.checkbox-block input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 2px;
+  border: 1px solid #EDEDED;
+  transform: rotate(38deg);
+}
+
+.checkbox-block input:checked~.checkmark {
+  border: 1px solid #BDDAD5;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-block input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkbox-block .checkmark:after {
+  left: 49%;
+  top: 48%;
+  width: 6px;
+  height: 15px;
+  border: solid #5DC2AF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transform: translate(-50%, -50%);
+}
+
+.delete {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0);
+  right: 20px;
+  color: #CC9A9A;
+  transition: all ease .3s;
+}
+
+.delete:hover {
+  color: #AF5B5E;
+}
+
+.controller {
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 15px;
+  background-color: white;
+  color: #777;
+  border-top: 1px solid #E6E6E6;
+  box-shadow:
+    0 1px 1px 0 #c0c0c0,
+    0 9px 0 -4px #f6f6f6,
+    0 9px 1px -3px #c0c0c0,
+    0 18px 0 -8px #f6f6f6,
+    0 18px 1px -7px #c0c0c0;
+}
+
+.display {
+  display: flex;
+  margin-left: 35px;
+}
+
+.item-left {
+  width: 100px;
+  text-align: start;
+}
+
+.display p {
+  padding: 3px 7px;
+  margin: 0 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.display p:hover {
+  outline: solid 1px #F7EAEA;
+}
+
+.selected-page {
+  outline: solid 1px #F7EAEA;
+}
+
+.clear {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.clear:hover {
+  text-decoration: underline;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.item-parent {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: solid lightgray;
+  border-width: 1px 0px;
+  margin-bottom: -1px;
+}
+
+.removeIcon {
+  display: inline-block;
+  color: red;
+  /* background-color: white; */
+  align-content: center;
+  visibility: hidden;
+  width: 21px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 22px;
+  padding-top: 15px;
+}
+
+.item-parent:hover .removeIcon {
+  visibility: visible;
+}
+
+.d-none {
+  display: none;
+}
+
+
+#filters-parent {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todomvc</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <!-- <link rel="icon" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="icons/FontAwesome.Pro.6.0.0.Beta1/web/css/all.css"
+    /> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>todos</h1>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <form onsubmit="event.preventDefault()">
+          <input
+            type="text"
+            id="main"
+            class="input"
+            placeholder="What needs to be done?"
+            autofocus
+            autocomplete="off"
+          />
+          <div id="content"></div>
+          <div id="arrow" class="fa-solid fa-chevron-down fa-lg arrow d-none">
+            V
+          </div>
+          <div class="controller d-none">
+            <div class="display">
+              <p class="item-left"></p>
+              <div id="filters-parent">
+                <p id="all">All</p>
+                <p id="active">Active</p>
+                <p id="completed">Completed</p>
+              </div>
+              <p id="clearCompleted" class="d-none">Clear completed</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="container mt-65">
+        <p class="info">Double-click to edit a todo</p>
+        <p class="info">
+          Credits: Christoph Burgdorf, Eric Bidelman, Jacob Mumm and Igor Minar
+        </p>
+        <p class="info">Part of TodoMVC</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
